@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Account</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-100">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md p-4 flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+            <i class="fas fa-university text-2xl text-blue-600"></i>
+            <h1 class="text-2xl font-bold text-gray-800">MCB BANK</h1>
+        </div>
+        <nav class="space-x-4">
+            <a href="/accounts" class="text-gray-600 hover:text-blue-600">Home</a>
+            <a href="/add-account" class="text-gray-600 hover:text-blue-600">Add New Account</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="p-8">
+        <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-xl p-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-4">Account Details</h2>
+            
+            <!-- Account Info Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" th:if="${account}">
+                <div class="bg-gray-50 p-4 rounded-md">
+                    <p class="text-sm font-semibold text-gray-500">Holder Name</p>
+                    <p class="text-lg text-gray-900" th:text="${account.holderName}">John Doe</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-md">
+                    <p class="text-sm font-semibold text-gray-500">Account Number</p>
+                    <p class="text-lg text-gray-900" th:text="${account.accountNumber}">123456789</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-md">
+                    <p class="text-sm font-semibold text-gray-500">Branch Name</p>
+                    <p class="text-lg text-gray-900" th:text="${account.branchName}">Main Branch</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-md">
+                    <p class="text-sm font-semibold text-gray-500">Current Balance</p>
+                    <p class="text-lg font-bold text-green-600" th:text="'Rs.' + ${#numbers.formatDecimal(account.currentBalance, 1, 'COMMA', 2, 'POINT')}">Rs.50,000.00</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-md">
+                    <p class="text-sm font-semibold text-gray-500">Account Type</p>
+                    <p class="text-lg text-gray-900 capitalize" th:text="${account.accountType}">Saving</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-md">
+                    <p class="text-sm font-semibold text-gray-500">Contact</p>
+                    <p class="text-lg text-gray-900" th:text="${account.contact}">555-123-4567</p>
+                </div>
+            </div>
+
+            <div th:if="${account == null}" class="text-center text-red-500 font-semibold">
+                Account not found.
+            </div>
+
+            <div class="mt-8 text-center">
+                <a href="/accounts" class="bg-blue-600 text-white font-bold py-2 px-6 rounded-md hover:bg-blue-700 transition-colors">
+                    <i class="fas fa-arrow-left mr-2"></i>Back to All Accounts
+                </a>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
