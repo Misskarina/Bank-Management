@@ -9,7 +9,7 @@ Includes a **manager-facing dashboard** and a complete **REST API** for account 
 - Full CRUD for bank accounts (Create, View, Delete)  
 - Manager Dashboard with Tailwind CSS styling  
 - REST API for programmatic access (Postman-ready)  
-- MariaDB support (H2 for testing)  
+- MariaDB support 
 - Clean service-layer & DTO architecture  
 
 ---
