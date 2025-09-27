@@ -23,13 +23,6 @@ Includes a **manager-facing dashboard** and a complete **REST API** for account 
 
 ---
 
-## Setup
-
-### 1. Clone
-bash
-git clone https://github.com/your-username/bank-management-system.git
-cd bank-management-system
-
 
 ### Login Page
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/7a5aff3a-9173-4c20-b726-f67a8d91be19" />
