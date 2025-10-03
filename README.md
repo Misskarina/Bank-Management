@@ -1,6 +1,6 @@
 # Bank Management System
 
-A full-stack **Bank Management System** built with **Spring Boot 3**, **Java 17**, and **Thymeleaf**.  
+A full-stack **Bank Management System** built with **Spring Boot 3**, **Java 8**, and **Thymeleaf**.  
 Includes a **manager-facing dashboard** and a complete **REST API** for account management.
 
 ---
